@@ -1,7 +1,7 @@
-import {View, Text, Box, Heading, Input, VStack, Button, Pressable, HStack} from 'native-base'
+import {Text, Box, Heading, Input, VStack, Button, Pressable, HStack} from 'native-base'
 import React from 'react'
-import { Ionicons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons'; 
+import { Ionicons, AntDesign } from '@expo/vector-icons';
+ 
 
 function LoginScreen() {
   return (
@@ -20,7 +20,7 @@ function LoginScreen() {
             {/*Login Input*/}
             <Input 
             InputRightElement={
-              <Ionicons name="people" size={24} color="black"/>
+              <AntDesign name="user" size={24} color="black" />
             }
             variant = "underlined" placeholder='username'w={"90%"} color = "black" borderColor={"gray"} fontSize= {20}/>
             
@@ -38,14 +38,14 @@ function LoginScreen() {
               bgColor: '#fff'
             }}
             variant={"subtle"} bgColor = "aqua" my={30} rounded = {10}>
-              Login
+              Войти
             </Button>
 
             {/*link to sign up*/}
             <HStack>
-              <Text fontSize={16}>If you are not registered  </Text>
+              <Text fontSize={16}>У вас ещё нет аккаунта?  </Text>
               <Pressable>
-                <Text fontSize={16} color={"aqua"}>Sign Up</Text>
+                <Text fontSize={16} color={"aqua"}>Зарегистрироваться</Text>
               </Pressable>
             </HStack>
             

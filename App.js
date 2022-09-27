@@ -1,17 +1,22 @@
 import React from "react";
-import {StyleSheet, Text, View} from 'react-native';
-import {StatusBar} from 'expo-status-bar'
-import LoginScreen from "./src/Screens/LoginScreen";
-import {NativeBaseProvider, Box} from 'native-base'
-
+import "react-native-gesture-handler";
+import { StatusBar } from "expo-status-bar";
+import { NativeBaseProvider } from "native-base";
+import MainContainer from "./src/navigation/MainContainer";
+import store from "./src/redux/rootReducer";
+import { Provider } from "react-redux";
+import DrawerNavigator from "./src/navigation/DrawerNavigator";
+import { NavigationContainer } from "@react-navigation/native";
 
 export default function App() {
   return (
-    <NativeBaseProvider>
-        <LoginScreen/>
-        <StatusBar style="auto"/>
-    </NativeBaseProvider>    
+    <Provider store={store}>
+      <NativeBaseProvider>
+        <NavigationContainer>
+          <DrawerNavigator />
+        </NavigationContainer>
+        <StatusBar style="auto" />
+      </NativeBaseProvider>
+    </Provider>
   );
 }
-
-
